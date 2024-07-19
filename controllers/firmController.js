@@ -4,6 +4,7 @@ const vendors = require('../models/Vendor');
 
 const products = require('../models/Product');
 const Firm=require('../models/Firm');
+const path=require('path')
 
 const storage=multer.diskStorage({
     destination: function (req, file, cb) {

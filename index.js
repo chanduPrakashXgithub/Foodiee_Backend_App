@@ -3,6 +3,7 @@ const bodyparser=require('body-parser')
 const firmroutes=require('./routes/firmRoutes')
 const productroutes=require('./routes/productRoutes')
 const path=require('path')
+const cors=require('cors')
 
 
 const express = require('express'); // Import the Express module
@@ -21,7 +22,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.use(bodyparser.json())
 app.use('/firm',firmroutes)
 app.use('/product',productroutes)
-
+app.use(cors())
 app.use('/vendors', vendorsRoutes);
 app.use('/uploads',express.static('uploads'));
 app.listen(port, () => {
